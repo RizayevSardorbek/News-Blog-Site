@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog Site</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header>
+    <h1><a href="{% url 'home' %}"> Sardorbek Blog</a></h1>
+</header>
+<div>
+    {% block content %}
+    {% endblock content %}
+</div>
+<footer>
+    <p><a href="{% url 'add' %}"> Add new post</a></p>
+</footer>
+</body>
+</html>
