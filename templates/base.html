@@ -10,6 +10,12 @@
 <header>
     <h1><a href="{% url 'home' %}"> Sardorbek Blog</a></h1>
 </header>
+{% if user.is_authenticated %}
+    <p>Wellcome! {{user.username}}</p>
+    <p><a href="{% url 'logout' %}"> Log out</a></p>
+{% else  %}
+    <p><a href="{% url 'login' %}"> Log In</a> | <a href="{% url 'signup' %}">Sign Up</a></p>
+{% endif %}
 <div>
     {% block content %}
     {% endblock content %}
